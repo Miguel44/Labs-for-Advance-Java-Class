@@ -324,11 +324,11 @@ public class MyMouseAdapter extends MouseAdapter {
              myPanel1.y = y11;
              int gridX2 = myPanel1.getGridX(x11, y11);
              int gridY2 = myPanel1.getGridY(x11, y11);
-        	 if ((myPanel1.mouseDownGridX== -1) || (myPanel1.mouseDownGridY == -1)) {        		 
+        	 if ((myPanel1.mouseDownGridX== -1) & (myPanel1.mouseDownGridY == -1)) {        		 
         		 
         		 //Right mouse button
         	 }else{
-        		 if ((gridX2 == -1) || (gridY2 == -1)){
+        		 if ((gridX2 == -1) & (gridY2 == -1)){
         			 for(int j = 1; j<10;j++){
             			 for(int i = 1;i<0;i++){
             				  myPanel1.colorArray[j][i] = Color.BLACK;
