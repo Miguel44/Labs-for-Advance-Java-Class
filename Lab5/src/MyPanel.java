@@ -36,6 +36,7 @@ public class MyPanel extends JPanel {
 		for (int x = 1; x < TOTAL_COLUMNS; x++) {   //The rest of the grid
 			for (int y = 1; y < TOTAL_ROWS; y++) {
 				colorArray[x][y] = Color.WHITE;
+				
 			}
 		}
 	}
@@ -75,6 +76,7 @@ public class MyPanel extends JPanel {
 					Color c = colorArray[x][y];
 					g.setColor(c);
 					g.fillRect(x1 + GRID_X + (x * (INNER_CELL_SIZE + 1)) + 1, y1 + GRID_Y + (y * (INNER_CELL_SIZE + 1)) + 1, INNER_CELL_SIZE, INNER_CELL_SIZE);
+					
 				}
 			}
 		}
