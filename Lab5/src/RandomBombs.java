@@ -2,29 +2,35 @@ import java.awt.Color;
 import java.util.Random;
 public class RandomBombs {
 
-	private static double p = 10;
-	private Color bomb;
+	private  Color[][] colorArray = new Color[10][11];
 	
-	public  RandomBombs(int m,int n){
+	private int i;
+	private int j;
+	public  RandomBombs(){
 		Random generator = new Random();
+		int m = 10;
+		int n =11;
+		
+		double p = generator.nextInt(2);
 		boolean[][] bombs = new boolean[m][n];
 	    
-		for (int i = 1; i <= m; i++){
-         for (int j = 1; j <= n; j++){
-             bombs[i][j] = (generator.nextInt(10) < p);
+		for (i = 1; i < m; i++){
+         for ( j = 1; j < n; j++){
+             bombs[i][j] = (Math.random() < p);
          }
 	    }
-     for (int i = 1; i <= m; i++) {
-         for (int j = 1; j <= n; j++){
+     for (i = 0; i < m; i++) {
+         for ( j = 0; j <n; j++){
              if (bombs[i][j]) {
-            	 this.bomb = Color.BLACK;
-             }
-         
-     }
-   }
+            	 Color bomb = Color.BLACK;
+            	 Color[][] colorArray = new Color[m][n];
+            	 colorArray[i][j]= bomb;
+             }		         
+           }
+          }
  }
 	 public Color getBombs(){
-		 return bomb;
+		 return colorArray[i][j];
 	 }
 	
 }
