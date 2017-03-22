@@ -45,7 +45,6 @@ public class MyMouseAdapter extends MouseAdapter {
 		}
 	}
 	public void mouseReleased(MouseEvent e) {
-		RandomBombs placeBomb = new RandomBombs();
 		switch (e.getButton()) {
 		case 1:		//Left mouse button
 			Component c = e.getComponent();
@@ -83,8 +82,18 @@ public class MyMouseAdapter extends MouseAdapter {
 						if ((gridX == 0) || (gridY == 0)) {
 							//On the left column and on the top row... do nothing
 						} else {
-							 myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = placeBomb.getBombs();
-								myPanel.repaint();		   
+							if (myPanel.sol[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == 1){
+								myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.YELLOW;
+								myPanel.repaint();
+							}
+							if ( myPanel.bombArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == Color.BLACK){
+								myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.BLACK;
+								myPanel.repaint();
+							}else{
+				
+					 myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.GRAY;
+					myPanel.repaint();	
+							}
 						}
 					}
 				}
